@@ -79,8 +79,8 @@ jobs:
             key: ${{ secrets.SSH_PRIVATE_KEY }}
             envs: GITHUB_SHA
             script: |
-                sudo docker rm mojacknong
                 sudo docker pull minchogt/mojacknong
-                docker-compose up -d mojacknong
+                sudo ./deploy.sh
+                
                 docker image prune -f
                 
